@@ -2,6 +2,11 @@ package com.example.mavenspringboot.student;
 
 import java.time.LocalDate;
 
+// essa classe representa um estudante,
+// cada estudante tem um id, nome, email, data de nascimento e idade.
+// nela há um construtor que inicializa todos os campos,
+// também tem getters e setters para todos os campos para que possamos acessá-los e modificá-los
+// ela tem um method toString que retorna uma representação em string do objeto
 public class Student {
 
     private long id;
