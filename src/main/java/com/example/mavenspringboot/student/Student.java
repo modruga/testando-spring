@@ -1,6 +1,15 @@
 package com.example.mavenspringboot.student;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
+
+@Setter
+@Getter
+@Entity
+@Table
 
 // essa classe representa um estudante,
 // cada estudante tem um id, nome, email, data de nascimento e idade.
@@ -8,6 +17,17 @@ import java.time.LocalDate;
 // também tem getters e setters para todos os campos para que possamos acessá-los e modificá-los
 // ela tem um method toString que retorna uma representação em string do objeto
 public class Student {
+
+    @Id
+    @SequenceGenerator(
+            name = "student_sequence",
+            sequenceName = "student_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
+    )
 
     private long id;
     private String name;
@@ -29,45 +49,10 @@ public class Student {
 
     }
 
-    public long getId() {
-        return id;
+    public Student() {
+
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public LocalDate getDob() {
-        return dob;
-    }
-
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 
     @Override
     public String toString() {

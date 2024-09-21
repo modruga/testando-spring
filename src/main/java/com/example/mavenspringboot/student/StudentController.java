@@ -9,6 +9,8 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
+
+
 // essa anotação diz ao Spring que essa classe é um controlador
 @RestController
 
@@ -32,12 +34,9 @@ public class StudentController {
 
         // esse method retorna uma lista de estudantes
         public List<Student> getStudents () {
-
             // usando o method getStudents() em StudentService para obter a lista de estudantes
-
             return studentService.getStudents();
 
         }
 
 }
-

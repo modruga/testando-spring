@@ -8,7 +8,6 @@ import java.util.List;
 
 // essa anotação diz ao Spring que essa classe é um serviço
 @Service
-
 public class StudentService {
 
     public List<Student> getStudents() {
